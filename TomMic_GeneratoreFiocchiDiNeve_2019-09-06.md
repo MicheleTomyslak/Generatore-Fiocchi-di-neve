@@ -9,11 +9,23 @@
 
 |Orario        |Lavoro svolto                 |
 |--------------|------------------------------|
-|15:00 - 16:30 |Installato Git          |
-|...           |...                           |
+|14:00 - 15:45 |Installato Git          |
+|15:45 - 16:30 |Configurato e risolto i problemi con il proxy                          |
 
 ##  Problemi riscontrati e soluzioni adottate
+Il proxy ha causato problemi nell'installazione la configurazione di GitHub Desktop.
+Soluzione trovata aggiungendo 6 linee al file .gitconfig
+```markdown
+[http]
+  proxy = http://michele.tomyslak:PASSWORD@proxy.cpt.local:8080
+  proxyAuthMethod = basic
+  schannelCheckRevoke = false #Solo se necessario
 
+[https]
+  proxy = http://michele.tomyslak:PASSWORD@proxy.cpt.local:8080
+  proxyAuthMethod = basic
+  schannelCheckRevoke = false #Solo se necessario
+```
 
 ##  Punto della situazione rispetto alla pianificazione
 
