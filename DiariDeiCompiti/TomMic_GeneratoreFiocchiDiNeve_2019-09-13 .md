@@ -10,7 +10,8 @@
 |Orario        |Lavoro svolto                 |
 |--------------|------------------------------|
 |10:05 - 10:35 |Redazione dei requisiti          |
-|10:35 - 11:35| Domande al cliente che vuole l'applicazione|                           
+|10:35 - 11:35| Domande al cliente che vuole l'applicazione|  
+|13:15 - 14:00|""|
 
 ##  Problemi riscontrati e soluzioni adottate
 
