@@ -203,6 +203,8 @@ presenta? Che hw sarà disponibile durante lo sviluppo?
 
 ## Progettazione
 
+
+
 Questo capitolo descrive esaustivamente come deve essere realizzato il
 prodotto fin nei suoi dettagli. Una buona progettazione permette
 all’esecutore di evitare fraintendimenti e imprecisioni
@@ -233,6 +235,8 @@ Se il diagramma E-R viene modificato, sulla doc dovrà apparire l’ultima
 versione, mentre le vecchie saranno sui diari.
 
 ### Design delle interfacce
+
+![](SchemaGUI.png)
 
 Descrizione delle interfacce interne ed esterne del sistema e
 dell’interfaccia utente. La progettazione delle interfacce è basata
