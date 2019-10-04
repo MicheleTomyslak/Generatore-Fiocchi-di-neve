@@ -1,5 +1,6 @@
-
+import java.awt.Polygon;
 import java.nio.file.Path;
+import java.util.ArrayList;
 
 
 
@@ -17,6 +18,7 @@ public class Saver {
     private Path p;
     private String formato;
     private String nomeFiocco;
+    private ArrayList<Polygon> dataToSave;
     public Saver(Path p){
         
     }
