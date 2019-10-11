@@ -19,11 +19,14 @@ public class MainFrame extends JFrame {
      */
     private FlakesPanel fp;
     
+    
+    
     public static void main(String[]args){
         MainFrame mf = new MainFrame();
         mf.setVisible(true);
         //mf.setSize(500,500);
         mf.setMinimumSize(new Dimension(1024,768));
+        mf.setMaximumSize(new Dimension(1024,768));
         mf.setDefaultCloseOperation(EXIT_ON_CLOSE);
     }
 
@@ -31,21 +34,32 @@ public class MainFrame extends JFrame {
      * Costruttore vuoto
      */
     public MainFrame(){
-       int relWidth = this.getWidth()/100;
-
+       double rel = getHeight();
+        System.out.println(rel);
        tp = new TrianglePanel();
+       this.addMouseListener(tp);
        tp.setVisible(true);
-       fp = new FlakesPanel(relWidth*50,relWidth*10,relWidth*50,relWidth*50);
+       double relWidthFlakesPanel = rel * 10; 
+       int relWidth = (int) relWidthFlakesPanel;
+       fp = new FlakesPanel(100,100,100,100);
        
        fp.setVisible(true);
     }
     
     @Override
     public void paint(Graphics g){
+        //System.out.println(this.getWidth());
+        g.setColor(Color.LIGHT_GRAY);
+        g.fillRect(0, 0, this.getWidth(), this.getHeight());
+         
         g.setColor(Color.WHITE);
+        g.drawString("Width: "+this.getWidth(), 100, 100);
+        g.drawString("Height:"+this.getHeight(),100,120);
+        fp.paint(g); 
+        tp.paint(g);
         
-       tp.paint(g);
        
-       fp.paint(g);
+       
+       
     }
 }

@@ -28,6 +28,7 @@ public class FlakesPanel extends JFrame {
     /**
      * L'altezza del pannello.
      */
+    
     private int height=0;
     public FlakesPanel(int x,int y,int width,int height){
         this.setSize(400,400);
@@ -100,19 +101,24 @@ public class FlakesPanel extends JFrame {
     
     @Override
     public void paint(Graphics g){
-        int sizeRel = this.getWidth()/100;
-        System.out.println(sizeRel);
-        g.setColor(Color.WHITE);
-        g.fillRect(0, 0, this.getWidth(),this.getHeight());
+        int sizeRel ;
+        double dSizeRel = this.getWidth()/100;
+        dSizeRel*=20;
+        sizeRel=(int) dSizeRel;
+        //System.out.println("2"+sizeRel);
+        
         g.setColor(Color.BLACK);
-        
+        //System.out.println(sizeRel+":    Relative size");
+        //System.out.println(dSizeRel+":    Relative size double");
         Polygon triangle = new Polygon();
-        triangle.addPoint(x+sizeRel*20,y+ sizeRel*20);
-        triangle.addPoint(x +sizeRel*80,y+sizeRel*20);
-        triangle.addPoint(x+20*sizeRel,y+ 80*sizeRel);
+        triangle.addPoint(500,100);
         
+        triangle.addPoint(500,400);
+               
+        triangle.addPoint(700,100);
+        //System.out.println(triangle.npoints);
         
-        g.setColor(Color.LIGHT_GRAY);
+        g.setColor(Color.BLUE);
         g.fillPolygon(triangle);
     }
 }

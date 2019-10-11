@@ -2,6 +2,9 @@
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Polygon;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
+import java.awt.event.MouseMotionListener;
 import javax.swing.JPanel;
 
 /*
@@ -14,13 +17,15 @@ import javax.swing.JPanel;
  *
  * @author tmich
  */
-public class TrianglePanel extends JPanel {
+public class TrianglePanel extends JPanel implements MouseListener {
     private int xRel=0;
     private int yRel=0;
     private int relWidth=0;
     private int relHeight=0;
+    private int lastXClicked=0;
+    private int lastYClicked=0;
     public TrianglePanel(){
-        
+        this.addMouseListener(this);
         setRelativeWidth(relWidth);
         setRelativeHeight(relHeight);
         setRelativeX(xRel);
@@ -31,19 +36,29 @@ public class TrianglePanel extends JPanel {
     
     @Override
     public void paint(Graphics g){
-        int sizeRel = super.getWidth()/100;
-        g.setColor(Color.WHITE);
-        g.fillRect(0, 0, super.getWidth(),super.getHeight());
-        g.setColor(Color.BLACK);
+        int sizeRel ;
+        double dSizeRel = this.getWidth()/100;
+        dSizeRel*=20;
+        sizeRel=(int) dSizeRel;
+        //System.out.println("2"+sizeRel);
         
+        
+        //System.out.println(sizeRel+":    Relative size");
+        //System.out.println(dSizeRel+":    Relative size double");
         Polygon triangle = new Polygon();
-        triangle.addPoint(sizeRel*20, sizeRel*20);
-        triangle.addPoint(sizeRel*50,sizeRel*20);
-        triangle.addPoint(20*sizeRel, 80*sizeRel);
+        triangle.addPoint(200,100);
         
+        triangle.addPoint(200,400);
+               
+        triangle.addPoint(400,100);
+        //System.out.println(triangle.npoints);
         
-        g.setColor(Color.LIGHT_GRAY);
+        g.setColor(Color.BLUE);
         g.fillPolygon(triangle);
+        g.setColor(Color.WHITE);
+        g.drawString("Last mouse X: "+lastXClicked, 100,160);
+        
+        g.drawString("Last mouse Y: "+lastYClicked, 100,180);
     }
     public int getRelativeWidth(){
         return relWidth;
@@ -89,4 +104,32 @@ public class TrianglePanel extends JPanel {
         }
         
     }
+
+    @Override
+    public void mouseClicked(MouseEvent me) {
+        lastXClicked = me.getX();
+        lastYClicked = me.getY();
+        System.out.println("X: "+lastXClicked);
+        System.out.println("Y: "+lastYClicked);
+        repaint();
+        
+    }
+
+    @Override
+    public void mousePressed(MouseEvent arg0) {
+    }
+
+    @Override
+    public void mouseReleased(MouseEvent arg0) {
+    }
+
+    @Override
+    public void mouseEntered(MouseEvent arg0) {
+    }
+
+    @Override
+    public void mouseExited(MouseEvent arg0) {
+    }
+
+    
 }
