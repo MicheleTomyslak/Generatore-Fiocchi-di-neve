@@ -1,6 +1,8 @@
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Graphics;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 import javax.swing.*;
 
 
@@ -9,7 +11,7 @@ import javax.swing.*;
  *
  * @author Michele Tomyslak
  */
-public class MainFrame extends JFrame {
+public class MainFrame extends JFrame implements MouseListener {
     /**
      * tp è il JPanel dove è contenuto il triangolo da tagliare per realizzare il fiocco.
      */
@@ -18,6 +20,8 @@ public class MainFrame extends JFrame {
      * fp è il JPanel dove è contenuto la rappresentazione del fiocco.
      */
     private FlakesPanel fp;
+    
+    
     
     
     
@@ -58,8 +62,30 @@ public class MainFrame extends JFrame {
         fp.paint(g); 
         tp.paint(g);
         
+        
        
        
        
+    }
+
+    @Override
+    public void mouseClicked(MouseEvent arg0) {
+        repaint();
+    }
+
+    @Override
+    public void mousePressed(MouseEvent arg0) {
+    }
+
+    @Override
+    public void mouseReleased(MouseEvent arg0) {
+    }
+
+    @Override
+    public void mouseEntered(MouseEvent arg0) {
+    }
+
+    @Override
+    public void mouseExited(MouseEvent arg0) {
     }
 }

@@ -24,6 +24,15 @@ public class TrianglePanel extends JPanel implements MouseListener {
     private int relHeight=0;
     private int lastXClicked=0;
     private int lastYClicked=0;
+    
+    public static void main(String[]args){
+        TrianglePanel tp  = new TrianglePanel();
+        System.out.println("Wait ");
+        tp.setSize(500,500);
+        tp.setVisible(true);
+        
+    }
+    
     public TrianglePanel(){
         this.addMouseListener(this);
         setRelativeWidth(relWidth);
@@ -77,6 +86,8 @@ public class TrianglePanel extends JPanel implements MouseListener {
     
     
     
+    
+    
     public void setRelativeWidth(int relWidth ){
         if(relWidth>0){
             this.relWidth=relWidth;
@@ -111,7 +122,7 @@ public class TrianglePanel extends JPanel implements MouseListener {
         lastYClicked = me.getY();
         System.out.println("X: "+lastXClicked);
         System.out.println("Y: "+lastYClicked);
-        repaint();
+        this.repaint();
         
     }
 
