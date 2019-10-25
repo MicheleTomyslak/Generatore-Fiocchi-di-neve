@@ -21,6 +21,15 @@ public class ClickPathTesting extends JFrame implements MouseListener {
      * Ultimo click del mouse sotto forma di Point
      */
     private Point lastClickPoint;
+    
+    boolean isStonks = false;
+    
+    Point clickedPoint;
+    
+    private int indexClickedPoint;
+    
+    private int indexPolygonsArr;
+    
     Polygon p = new Polygon();
     /**
      * Lista dei poligoni.
@@ -73,13 +82,31 @@ public class ClickPathTesting extends JFrame implements MouseListener {
         
         
         
-        g.drawString(""+listPolygon.size(), 50, 50);
+        g.drawString("Numero liste di poligoni: "+listPolygon.size(), 50, 50);
+        g.drawString("Grandezza lista di punti: "+listPoints.size(), 50, 70);
         
         
             System.out.println(listPolygon.size());
             for (int i = 0; i < listPolygon.size(); i++) {
                 p = listPolygon.get(i);
-                g.fillPolygon(p);
+                switch(i%4){
+                    case 0:
+                        g.setColor(Color.RED);
+                        break;
+                    case 1:
+                        g.setColor(Color.BLUE);
+                        break;
+                    case 2:
+                        g.setColor(Color.GREEN);
+                        break;
+                    case 3:
+                        g.setColor(Color.YELLOW);
+                    
+                }
+                       
+                        
+                            
+                g.drawPolygon(p);
             }
         
         
@@ -145,13 +172,47 @@ public class ClickPathTesting extends JFrame implements MouseListener {
         */
         repaint();
     }
+    
+    public void removePoint(int indexPolyList, int indexPoints){
+        p = listPolygon.get(indexPolyList);
+        
+        listPoints.remove(indexPoints);
+    }
 
     @Override
     public void mousePressed(MouseEvent arg0) {
+        
+        for (int i = 0; i < listPoints.size(); i++) {
+            if(arg0.getPoint().distance(listPoints.get(i))<10){
+                isStonks = true;
+                clickedPoint = listPoints.get(i);
+                indexClickedPoint = i;
+                break;
+            }else{
+                isStonks = false;
+            }
+        }
+        
+        
+        
     }
 
     @Override
     public void mouseReleased(MouseEvent arg0) {
+        if(isStonks){
+             clickedPoint = arg0.getPoint();
+             listPoints.add(indexClickedPoint,clickedPoint);
+             
+             if(listPolygon.size()>indexClickedPoint){
+                
+                 //listPolygon.get()
+                //listPoints.remove(indexClickedPoint+2);
+                removePoint(indexPolygonsArr,indexClickedPoint);
+             }
+             
+             
+        }
+       
     }
 
     @Override
