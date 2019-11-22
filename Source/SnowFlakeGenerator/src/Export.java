@@ -4,7 +4,9 @@ import java.awt.Polygon;
 import java.nio.file.Path;
 import java.util.ArrayList;
 import java.io.*;
+import java.nio.file.Files;
 import java.nio.file.Paths;
+
 
 
 /*
@@ -51,6 +53,8 @@ public class Export {
      */
     private String fileName = "";
     
+    private String formattedContent = "";
+    
     
     
     
@@ -61,8 +65,7 @@ public class Export {
      * Esporta i dati ottenuti dall' array di poligoni per poi 
      * stamparli nella path p.
      * @param dataToSave Il dato da salvare
-     * @param p Il percorso del file su cui si esporta il datoe.
-     * @param fileName Il nome del file.
+     * @param p Il percorso del file su cui si esporta il dato.
      */
      
     public Export(ArrayList<Polygon> dataToSave,Path p){
@@ -79,24 +82,44 @@ public class Export {
         
         Path p = Paths.get("C:\\Users\\tmich\\Documents\\Modulo 306\\file.elif");
         Export e = new Export(poly,p);
-        e.writeFile();
+        
+        e.writeFile(e.formattedContent);
         
         
     }
     
     
     
-    
+    /**
+     * Setter del dato da salvare nel file
+     * @param dataToSave Il dato da salvare
+     */
     public void setDataToSave(ArrayList<Polygon> dataToSave){
         this.dataToSave = dataToSave;
     }
+    /**
+     * Setter del percorso dove salvare il file.
+     * @param p Il percorso del file.
+     */
     public void setPath(Path p){
         this.p = p;
     }
+    
+    
+    
+    
+    /**
+     * Setter del nome del file.
+     * @param fileName Il nome del file.
+     */
     public void setFileName(String fileName){
         this.fileName = fileName;
     }
-    
+    /**
+     * Getter di una lista di point dalla  lista di poligoni all'indice index
+     * @param index l'indice da dove prendere la lista
+     * @return 
+     */
     public ArrayList<Point> getPointsFromPolygon(int index){
         Polygon poly = dataToSave.get(index);
         ArrayList<Point> points= new ArrayList<>();
@@ -106,44 +129,53 @@ public class Export {
             Point pointFP = new Point(xpoints[i],ypoints[i]);
             points.add(pointFP);
         }
-        
         return points;
     }
     
     /**
-     *
-     * @return
+     * Getter di tutte le x dalla lista di punti;
+     * @return Tutte le X in una lista.
      */
     public ArrayList<Integer>  getXFromPoints(){
         ArrayList<Integer> xList = new ArrayList<>();
         for (int i = 0; i < xList.size(); i++) {
             xList.add(this.PointsToSave.get(i).x);
         }
-        
         return xList;
     }
     
     /**
-     *
-     * @return
+     * Getter di tutte le y dalla lista di punti;
+     * @return Tutte le Y in una lista
      */
     public ArrayList<Integer>  getYFromPoints(){
         ArrayList<Integer> yList = new ArrayList<>();
         for (int i = 0; i < yList.size(); i++) {
             yList.add(this.PointsToSave.get(i).y);
         }
-        
         return yList;
     }
     
     
-   
     
+    
+    
+    public String setContentString(){
+       return "";       
+    }
+    
+    
+   
+    /**
+     * Metodo che formatta tutti i dati grezzi in strighe da salvare nel formato appropriato per l'esportazione
+     * @param string 
+     * @return 
+     */
     public String formatString(String string){
         //Grandezza dell'array
         int size = string.length();
         char[] c = new char[size];
-        
+       
         String content = "";
               
         
@@ -159,38 +191,21 @@ public class Export {
         
         
         
+        
+        
         return "";
     }
     
-    public void writeFile(){
-        System.out.println("GG scritto il file");
-        
-        
+    public void writeFile(String content){
         try {
-            File myObj = p.toFile();
-            
-            if (myObj.canWrite()) {
-            
-                FileWriter f = new FileWriter(myObj);
-                System.out.println("Stonks");
-                
-                f.write("Ciao");
-                
-                
-                System.out.println("File created: " + myObj.getName());
-                System.out.println("File path: "+ myObj.getAbsolutePath());
-                
-            }else{
-                
-                System.out.println("File already exists.");
-            }
-    
+            System.out.println("Im gonna do it");
+            System.out.println("Path: "+p.getFileName());
+            System.out.println("Content to save: "+content );
+            Files.writeString(p, content);
+        } catch (IOException ex) {
+            System.out.println("An Error Occured");
         }
-        catch (IOException e) {   
-        System.out.println("An error occurred.");
-        e.printStackTrace();
-    }
-    }
+    }  
     
     
     

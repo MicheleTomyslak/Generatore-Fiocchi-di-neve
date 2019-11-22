@@ -2,6 +2,7 @@
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Point;
+import java.awt.Polygon;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
@@ -19,8 +20,14 @@ import javax.swing.JPanel;
  */
 public class PointsPanel extends JPanel implements MouseListener, MouseMotionListener {
 
+    /**
+     * lastPoint è l'ultimo punto che è stato cliccato.
+     */
     private Point lastPoint;
 
+    /**
+     * Costante che definisce il diametro dei pallini riguardanti
+     */
     private final int DIAMETER = 20;
 
     private boolean isClicked = false;
@@ -32,8 +39,13 @@ public class PointsPanel extends JPanel implements MouseListener, MouseMotionLis
     private boolean isReleasedOutsideCircle = false;
 
     private ArrayList<Point> pointList = new ArrayList<>();
-    
+
     private int indexListPointSelected;
+    private boolean flagPoly;
+
+    private boolean flagReleased;
+
+    private ArrayList<Polygon> polyList = new ArrayList<>();
 
     /**
      *
@@ -45,25 +57,33 @@ public class PointsPanel extends JPanel implements MouseListener, MouseMotionLis
 
     @Override
     public void paintComponent(Graphics g) {
+
         g.setColor(Color.WHITE);
         g.fillRect(0, 0, this.getWidth(), this.getHeight());
         g.setColor(Color.BLACK);
+
+        if (flagPoly) {
+            for (int i = 0; i < polyList.size(); i++) {
+                
+                g.fillPolygon(generatePoly(pointList));
+                
+            }
+            
+        }
         for (int i = 0; i < pointList.size(); i++) {
             System.out.println(pointList.size());
-            
-            
+
             if (isClicked) {
                 Point currentPoint = pointList.get(i);
                 g.fillOval(currentPoint.x - DIAMETER / 2, currentPoint.y - DIAMETER / 2, DIAMETER, DIAMETER);
                 //pointList.add(currentPoint);
-                isClicked=false;
+                isClicked = false;
             } else if (isReleasedOutsideCircle) {
 
-                
                 isReleasedOutsideCircle = false;
                 isPressedInsideCircle = false;
-                
-            }else{
+
+            } else {
                 Point currentPoint = pointList.get(i);
                 g.fillOval(currentPoint.x - DIAMETER / 2, currentPoint.y - DIAMETER / 2, DIAMETER, DIAMETER);
 
@@ -76,13 +96,14 @@ public class PointsPanel extends JPanel implements MouseListener, MouseMotionLis
             isClicked = false;
             System.out.println(pointList.size());
         }
-        
+
         g.setColor(Color.BLACK);
         for (int i = 0; i < pointList.size(); i++) {
-            
             String p = pointToString(pointList.get(i));
-            g.drawString(p,20,20*i);
+            g.drawString(p, 20, 20 * i);
         }
+        
+        
 
     }
 
@@ -97,7 +118,7 @@ public class PointsPanel extends JPanel implements MouseListener, MouseMotionLis
 
     @Override
     public void mousePressed(MouseEvent arg0) {
-        
+
     }
 
     @Override
@@ -106,15 +127,16 @@ public class PointsPanel extends JPanel implements MouseListener, MouseMotionLis
             if (lastPoint.distance(arg0.getPoint()) > DIAMETER / 2) {
                 System.out.println("rilasciato fuori");
                 rewritePoint = arg0.getPoint();
-                if(!pointList.isEmpty()){
+                if (!pointList.isEmpty()) {
                     pointList.remove(indexListPointSelected);
                 }
-                
-                pointList.add(indexListPointSelected,rewritePoint);
-                
+
+                pointList.add(indexListPointSelected, rewritePoint);
+                flagReleased = true;
                 isReleasedOutsideCircle = true;
-                this.printPoint(rewritePoint);
+                printPoint(rewritePoint);
                 repaint();
+
             }
         }
 
@@ -122,6 +144,12 @@ public class PointsPanel extends JPanel implements MouseListener, MouseMotionLis
 
     @Override
     public void mouseEntered(MouseEvent arg0) {
+        for (int i = 0; i < pointList.size(); i++) {
+            if (arg0.getPoint().distance(pointList.get(i)) < 10) {
+
+            }
+        }
+
     }
 
     @Override
@@ -132,8 +160,8 @@ public class PointsPanel extends JPanel implements MouseListener, MouseMotionLis
     private static void printPoint(Point p) {
         System.out.println("X:" + p.x + "        Y:" + p.y);
     }
-    
-    private static String pointToString(Point p){
+
+    private static String pointToString(Point p) {
         return "X:" + p.x + "\tY:" + p.y;
     }
 
@@ -157,11 +185,36 @@ public class PointsPanel extends JPanel implements MouseListener, MouseMotionLis
 
     @Override
     public void mouseMoved(MouseEvent arg0) {
+        repaint();
     }
-    
-    
-    public void resetPointList(){
+
+    public void resetPointList() {
         pointList.clear();
+    }
+
+    public Polygon generatePoly(ArrayList<Point> pointList) {
+        Polygon poly = new Polygon();
+        for (int i = 0; i < pointList.size(); i++) {
+            addPointToPoly(pointList.get(i), poly);
+        }
+        flagPoly = true;
+        addPolytoPolyList(poly);
+        return poly;
+    }
+
+    public void addPolytoPolyList(Polygon p) {
+        polyList.add(p);
+    }
+
+    public void addPointToPoly(Point p, Polygon poly) {
+        int x = p.x;
+        int y = p.y;
+        poly.addPoint(x, y);
+
+    }
+
+    public ArrayList<Point> getPointList() {
+        return pointList;
     }
 
 }

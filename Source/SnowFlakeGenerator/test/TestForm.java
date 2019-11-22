@@ -31,6 +31,7 @@ public class TestForm extends javax.swing.JFrame {
         resetButton = new javax.swing.JButton();
         loadButton = new javax.swing.JButton();
         saveButton = new javax.swing.JButton();
+        generatePolyButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -74,6 +75,14 @@ public class TestForm extends javax.swing.JFrame {
         });
         jPanel1.add(saveButton);
 
+        generatePolyButton.setText("Generate");
+        generatePolyButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                generatePolyButtonActionPerformed(evt);
+            }
+        });
+        jPanel1.add(generatePolyButton);
+
         getContentPane().add(jPanel1, java.awt.BorderLayout.PAGE_END);
 
         pack();
@@ -95,6 +104,11 @@ public class TestForm extends javax.swing.JFrame {
         s.setVisible(true);
         s.setSize(400,400);
     }//GEN-LAST:event_saveButtonActionPerformed
+
+    private void generatePolyButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_generatePolyButtonActionPerformed
+        pointsPanel1.generatePoly(pointsPanel1.getPointList());
+        pointsPanel1.repaint();
+    }//GEN-LAST:event_generatePolyButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -132,6 +146,7 @@ public class TestForm extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton generatePolyButton;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JButton loadButton;
     private PointsPanel pointsPanel1;
