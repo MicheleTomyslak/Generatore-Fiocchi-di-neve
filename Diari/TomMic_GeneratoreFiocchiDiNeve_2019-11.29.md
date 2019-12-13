@@ -1,0 +1,25 @@
+
+
+# Generatore di fiocchi di neve | Diario di lavoro
+##### Michele Tomyslak
+### Trevano, 29.11.2019
+
+## Lavori svolti
+
+
+|Orario        |Lavoro svolto                 |
+|--------------|------------------------------|
+|10:05 - 14:15 |Nuovo codice (Implementazione codice di salvataggio dei punti del  poligono)  |
+|14:15 - 14:40 |Discussione per gli stage all'estero|
+|15:00 - 16:30 |Commenti e documentazione |
+
+                           
+
+##  Problemi riscontrati e soluzioni adottate
+La GUI non riesco a disegnarla proprio, (mi conviene ricominciare il disegno dei fiocchi da capo)
+
+##  Punto della situazione rispetto alla pianificazione
+Il disegno dei punti non riesce come vorrei.
+
+## Programma di massima per la prossima giornata di lavoro
+Continuare a implementare le funzioni di esportazione, e riuscire a stampare il fiocco a schermo

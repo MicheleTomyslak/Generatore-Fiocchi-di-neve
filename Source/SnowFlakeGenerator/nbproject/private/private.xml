@@ -4,21 +4,16 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/D:/GitHub/Generatore-Fiocchi-di-neve/Source/SnowFlakeGenerator/src/Generator.java</file>
-            <file>file:/D:/GitHub/Generatore-Fiocchi-di-neve/Source/SnowFlakeGenerator/src/Saver.java</file>
-            <file>file:/D:/GitHub/Generatore-Fiocchi-di-neve/Source/SnowFlakeGenerator/src/Export.java</file>
-            <file>file:/D:/GitHub/Generatore-Fiocchi-di-neve/Source/SnowFlakeGenerator/src/TestFrame.java</file>
-            <file>file:/D:/GitHub/Generatore-Fiocchi-di-neve/Source/SnowFlakeGenerator/test/MPointPanel.java</file>
-            <file>file:/D:/GitHub/Generatore-Fiocchi-di-neve/Source/SnowFlakeGenerator/src/Import.java</file>
-            <file>file:/D:/GitHub/Generatore-Fiocchi-di-neve/Source/SnowFlakeGenerator/test/SaveDialog.java</file>
-            <file>file:/D:/GitHub/Generatore-Fiocchi-di-neve/Source/SnowFlakeGenerator/test/ClickPathTesting.java</file>
-            <file>file:/D:/GitHub/Generatore-Fiocchi-di-neve/Source/SnowFlakeGenerator/test/Core.java</file>
-            <file>file:/D:/GitHub/Generatore-Fiocchi-di-neve/Source/SnowFlakeGenerator/test/MPointFrame.java</file>
-            <file>file:/D:/GitHub/Generatore-Fiocchi-di-neve/Source/SnowFlakeGenerator/src/FlakesPanel.java</file>
             <file>file:/D:/GitHub/Generatore-Fiocchi-di-neve/Source/SnowFlakeGenerator/src/TrianglePanel.java</file>
             <file>file:/D:/GitHub/Generatore-Fiocchi-di-neve/Source/SnowFlakeGenerator/test/PointsPanel.java</file>
+            <file>file:/D:/GitHub/Generatore-Fiocchi-di-neve/Source/SnowFlakeGenerator/src/TestFrame.java</file>
             <file>file:/D:/GitHub/Generatore-Fiocchi-di-neve/Source/SnowFlakeGenerator/src/MainFrame.java</file>
-            <file>file:/D:/GitHub/Generatore-Fiocchi-di-neve/Source/SnowFlakeGenerator/test/MPoint.java</file>
+            <file>file:/D:/GitHub/Generatore-Fiocchi-di-neve/Source/SnowFlakeGenerator/test/SaveDialog.java</file>
+            <file>file:/D:/GitHub/Generatore-Fiocchi-di-neve/Source/SnowFlakeGenerator/test/ClickPathTesting.java</file>
+            <file>file:/D:/GitHub/Generatore-Fiocchi-di-neve/Source/SnowFlakeGenerator/test/TestLib.java</file>
             <file>file:/D:/GitHub/Generatore-Fiocchi-di-neve/Source/SnowFlakeGenerator/test/TestForm.java</file>
+            <file>file:/D:/GitHub/Generatore-Fiocchi-di-neve/Source/SnowFlakeGenerator/src/FlakesPanel.java</file>
+            <file>file:/D:/GitHub/Generatore-Fiocchi-di-neve/Source/SnowFlakeGenerator/src/PolygonSaver.java</file>
         </group>
     </open-files>
 </project-private>

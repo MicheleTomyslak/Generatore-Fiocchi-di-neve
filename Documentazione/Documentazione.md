@@ -91,6 +91,10 @@
   tramite interviste (da inserire nei diari), il progettista deve cercare
   di rispondere alle seguenti domande:
 
+  Il cliente necessita di un generatore di fiocchi di neve in Java, salvabili in PNG e in SVG.
+  Deve poter offrire la possibilità di importare dei fiocchi precedentemente creati.
+
+
   -   Quali sono i bisogni del committente?
 
   -   Quali funzioni deve svolgere il prodotto?
