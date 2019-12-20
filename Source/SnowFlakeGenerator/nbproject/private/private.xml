@@ -3,17 +3,10 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/D:/GitHub/Generatore-Fiocchi-di-neve/Source/SnowFlakeGenerator/src/Generator.java</file>
-            <file>file:/D:/GitHub/Generatore-Fiocchi-di-neve/Source/SnowFlakeGenerator/src/TrianglePanel.java</file>
-            <file>file:/D:/GitHub/Generatore-Fiocchi-di-neve/Source/SnowFlakeGenerator/test/PointsPanel.java</file>
-            <file>file:/D:/GitHub/Generatore-Fiocchi-di-neve/Source/SnowFlakeGenerator/src/TestFrame.java</file>
-            <file>file:/D:/GitHub/Generatore-Fiocchi-di-neve/Source/SnowFlakeGenerator/src/MainFrame.java</file>
-            <file>file:/D:/GitHub/Generatore-Fiocchi-di-neve/Source/SnowFlakeGenerator/test/SaveDialog.java</file>
-            <file>file:/D:/GitHub/Generatore-Fiocchi-di-neve/Source/SnowFlakeGenerator/test/ClickPathTesting.java</file>
-            <file>file:/D:/GitHub/Generatore-Fiocchi-di-neve/Source/SnowFlakeGenerator/test/TestLib.java</file>
-            <file>file:/D:/GitHub/Generatore-Fiocchi-di-neve/Source/SnowFlakeGenerator/test/TestForm.java</file>
-            <file>file:/D:/GitHub/Generatore-Fiocchi-di-neve/Source/SnowFlakeGenerator/src/FlakesPanel.java</file>
-            <file>file:/D:/GitHub/Generatore-Fiocchi-di-neve/Source/SnowFlakeGenerator/src/PolygonSaver.java</file>
+            <file>file:/D:/GitHub/Generatore-Fiocchi-di-neve/Source/SnowFlakeGenerator/src/finalversion/SnowFlakePanel.java</file>
+            <file>file:/D:/GitHub/Generatore-Fiocchi-di-neve/Source/SnowFlakeGenerator/src/finalversion/MainFrame.java</file>
+            <file>file:/D:/GitHub/Generatore-Fiocchi-di-neve/Source/SnowFlakeGenerator/src/finalversion/Triangle.java</file>
+            <file>file:/D:/GitHub/Generatore-Fiocchi-di-neve/Source/SnowFlakeGenerator/src/finalversion/TrianglePanel.java</file>
         </group>
     </open-files>
 </project-private>

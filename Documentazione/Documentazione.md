@@ -50,13 +50,13 @@
 ## Introduzione
 
 ### Informazioni sul progetto
-
-  
-
-  -   Allievo: Michele Tomyslak
-  -   Docenti coinvolti: Geo Petrini e Luca Muggiasca
-  -   SAM Trevano, Informatica , Modulo 306
-  -   06.09.2019    23.09.2019
+  - <i>Sviluppatore</i>: Michele Tomyslak
+  - <i>Consulente & Cliente</i>: Geo Petrini e Luca Muggiasca
+  - <i>Data di inizio</i>: 06.09.2019
+  - <i>Data di consegna</i>: 20.12.2019
+  - <i>Scuola</i>: SAM informatica.
+  - <i>Materia</i>: Modulo 306.
+  - <i>Classe</i>: I3AA.
 
 ### Abstract
 
@@ -80,70 +80,42 @@
 ### Scopo
 
   Questo progetto ha uno scopo completamente didattico, per imparare a gestire dei progetti e dei lavori complessi.
+  Deve permettere all'utente di scaricare un software java per generare dei fiocchi di neve tramite dei punti di taglio.
 
 
 ## Analisi
 
 ### Analisi e specifica dei requisiti
 
-  Il progettista, dopo aver ricevuto il mandato, in collaborazione con il
-  committente redige una lista di requisiti. Durante questi incontri,
-  tramite interviste (da inserire nei diari), il progettista deve cercare
-  di rispondere alle seguenti domande:
+ Il progetto è stato creato per farci imparare a gestire un mandato con delle consegne puntuali e con dei lavori a lungo termine.
 
-  Il cliente necessita di un generatore di fiocchi di neve in Java, salvabili in PNG e in SVG.
-  Deve poter offrire la possibilità di importare dei fiocchi precedentemente creati.
+  
+
+## Requisiti
 
 
-  -   Quali sono i bisogni del committente?
-
-  -   Quali funzioni deve svolgere il prodotto?
-
-  -   Come devono essere implementate?
-
-  -   L’utente, come vorrebbe/dovrebbe interagire con il prodotto?
-
-  -   Come verrà utilizzato il prodotto?
-
-  -   Che tipo di interfaccia si immagina?
-
-  -   Che prestazioni minime deve fornire il prodotto?
-
-  -   Che grado di sicurezza deve avere il prodotto?
-
-  -   …
-
-  In base alla lista dei requisiti e all’analisi degli stessi, il
-  progettista redige una *specifica dei requisiti* in cui elenca e
-  descrive in modo dettagliato quali sono le funzionalità che il prodotto
-  fornirà. La specifica dovrebbe essere abbastanza dettagliata da poter
-  essere utilizzata come base per lo sviluppo, ma non troppo; ad esempio
-  non dovrebbe contenere dettagli di implementazione, o definizioni
-  dettagliate dell’interfaccia grafica a meno che questi non siano
-  considerati cruciali. Non si deve scordare che i requisiti non
-  rappresentano delle attività bensì delle caratteristiche che il prodotto
-  dovrà possedere.
-
-
-
-
-|**ID**	|**Nome**			|**Priorità**|**Vers**|**Note**  |
-  |----|------------|--------|----|------|
-  |Req-1|Dovrà essere presente un sito web con descrizione e download dell'applicativo|2|1.0|...|
-  |Req-2|Possibilità di aggiunta dei punti per creare il fiocco personalizzato|1|1.0|...|
-  |Req-3|Possibilità di rimuovere tutti i punti generati|1|1.0|...|
-  |Req-4|Possibilità di inserire i punti con il mouse|1|1.0|...|
-|Req-5|Il fiocco di neve va generato su input dell'utente tramite il tasto "Genera"|1|1.0|...|
-|Req-6|L'applicazione deve permettere di salvare il fiocco di neve come immagine raster o vettoriale|1|1.0|...|
-|Req-7|L’applicativo deve permettere di salvare i punti di taglio per poter permettere modifiche o rigenerazione future|1|1.0|...|
-|Req-9|Deve essere presente una finestra ridimensionabile, con una grandezza minima di 1024x768.|1|1.0|
-|Req-10|Attenzione ai colori per i daltonici|2|1.0| 
- |Req-11| Requisiti di sistema, JRE,e guide con screenshots|1|1.0| Lista req. di sistema, JRE, guida con screenshots su pagina web 
- |Req-12| Possibilità di scegliere in che formato salvare il fiocco|1|1.0||
- |Req-13|Le dimensioni del triangolo da cui sviluppare il fiocco deve occupare il 50 % della schermata|1|1.0||
- |Req-14|Il tasto genera deve poter far visualizzare un anteprima del fiocco|1|1.0|oppure mostrare direttamente l'anteprima live
- |Req-15|Deve essere possibile ricaricare un fiocco salvato in precedenza|1|1.0|
-  |Req-16| La pagina web deve essere consultabile Explorer versione 11 , Firefox  versione 6, Chrome versione 76|2|1.0
+|ID   |Requisito            |Categoria      |Priorità|Versione|
+|-----|---------------------|---------------|--------|--------|
+|001|Creazione sito dal quale scaricare programma|Sito Web|4|1.0|
+|002|Informazioni del sito con guida|Sito Web|5|1.0|
+|003|Lista con requisiti di sistema|Sito Web|5|1.0|
+|004|Dimensione minima finestra 1024X768|Struttura Programma|4|1.0|
+|005|Il triangolo occupa sempre il 50% della finestra e si ridimensiona|Struttura Programma|6|1.0|
+|006|Con tasto sinistro o touch si aggiunge un punto|Funzionalità|2|1.0|
+|007|Scelta del poligono con cui tagliare (quadrato, cerchio, triangolo,...)|Funzionalità+|2|1.0
+|008|Bottone reset dei punti|Funzionalità|2|1.0|
+|009|Switch per cambiare da aggiungere punto a eliminare|Funzionalità+|4|1.0|
+|010|Spostamento dei punti tramite tasto sinistro prolungato|Funzionalità+|4|1.0|
+|011|Generazione live a scelta (con checkbox)|Funzionalità+|5|1.0|
+|012|Bottone genera che non salva ma mostra solo l'anteprima|Funzionalità|3|1.0|
+|013|Salvataggio fiocco in png (con la relativa dimensione) o svg in una specifica cartella|Funzionalità|3|1.0|
+|014|Dimensioni PNG 500 o 1000 (quadrate)|Funzionalità|5|1.0|
+|015|Scelta del formato da salvare per l'immagine del fiocco|Funzionalità|4|1.0|
+|016|Creazione "snapshot" del fiocco per poterlo modificare|Funzionalità|4|1.0|
+|017|Salvataggio dei triangoli modificati in CSV|Funzionalità|2|1.0|
+|018|Menù con le varie cose a sinistra|Struttura Programma|2|1.0|
+|019|Menù del programma con fiocchi recenti (miniatura)|Struttura Programma|5|1.0|
+|020|Fornire .class in github ma per gli utenti fornire il jar|Sito Web|3|1.0|
   
 
 
