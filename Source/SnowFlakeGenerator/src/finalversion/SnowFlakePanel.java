@@ -12,6 +12,7 @@ import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.Writer;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.imageio.ImageIO;
@@ -32,13 +33,13 @@ import org.w3c.dom.DOMImplementation;
  * @author Michele Tomyslak
  * 
  */
-public class SnowFlakePanel extends javax.swing.JPanel {
+public class SnowFlakePanel extends javax.swing.JPanel  {
     
     /**
      * Posizione del mouse nel JPanel
      */
     Point posMouse;
-    
+    ArrayList<TrianglePanelListener> listeners;
     /**
      * TrianglePanel instance, used to import the cut triangolo.
      */
@@ -70,6 +71,7 @@ public class SnowFlakePanel extends javax.swing.JPanel {
     public SnowFlakePanel() {
         this.posMouse = new Point(0, 0);
         initComponents();
+        
     }
     
     /**
@@ -294,6 +296,14 @@ public class SnowFlakePanel extends javax.swing.JPanel {
             .addGap(0, 300, Short.MAX_VALUE)
         );
     }// </editor-fold>//GEN-END:initComponents
+
+    public void addTrianglePanelListener(TrianglePanelListener listener){
+        this.listeners.add(listener);
+    }
+    public void removeTrianglePanelListener(TrianglePanelListener listener){
+        this.listeners.remove(listener);
+    }
+    
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

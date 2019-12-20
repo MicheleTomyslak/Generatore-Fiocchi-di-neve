@@ -7,8 +7,8 @@ package finalversion;
 
 /**
  *
- * @author tmich
+ * @author Michele Tomyslak
  */
 public interface TrianglePanelListener {
-    
+    public void triangleUpdated();
 }

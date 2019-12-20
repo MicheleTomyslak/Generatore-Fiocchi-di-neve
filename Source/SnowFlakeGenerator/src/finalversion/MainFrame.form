@@ -66,12 +66,12 @@
             </MenuItem>
           </SubComponents>
         </Menu>
-        <Menu class="javax.swing.JMenu" name="Genera">
+        <Menu class="javax.swing.JMenu" name="generaButton">
           <Properties>
-            <Property name="text" type="java.lang.String" value="jMenu2"/>
+            <Property name="text" type="java.lang.String" value="Genera"/>
           </Properties>
           <Events>
-            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="GeneraMouseClicked"/>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="generaButtonMouseClicked"/>
           </Events>
         </Menu>
       </SubComponents>

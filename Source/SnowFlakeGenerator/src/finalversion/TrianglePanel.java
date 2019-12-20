@@ -22,8 +22,8 @@ import javax.swing.JOptionPane;
  * @author Michele Tomyslak
  * @since 1.0
  */
-public class TrianglePanel extends javax.swing.JPanel {
-
+public class TrianglePanel extends javax.swing.JPanel{
+    ArrayList<TrianglePanelListener> listeners;
     /**
      *
      */
@@ -86,6 +86,13 @@ public class TrianglePanel extends javax.swing.JPanel {
         this.mousePosition = new Point(0, 0);
         initComponents();
     }
+    
+    public void addTrianglePanelListener(TrianglePanelListener listener){
+        this.listeners.add(listener);
+    }
+    public void removeTrianglePanelListener(TrianglePanelListener listener){
+        this.listeners.remove(listener);
+    }
 
     /**
      *
@@ -94,6 +101,9 @@ public class TrianglePanel extends javax.swing.JPanel {
     @Override
     public void paintComponent(Graphics g) {
         super.paintComponent(g);
+        g.setColor(Color.cyan);
+        g.fillRect(0, 0, this.getWidth(), this.getHeight());
+        
         Graphics2D contestoGrafico2D = (Graphics2D) g;
         contestoGrafico2D.addRenderingHints(
                 new RenderingHints(RenderingHints.KEY_ANTIALIASING,
@@ -301,6 +311,7 @@ public class TrianglePanel extends javax.swing.JPanel {
         }
 
         repaint();
+        
     }//GEN-LAST:event_formMouseClicked
 
 

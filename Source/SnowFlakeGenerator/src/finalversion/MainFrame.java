@@ -4,6 +4,7 @@ package finalversion;
 import java.awt.Color;
 import java.awt.Graphics;
 import java.io.File;
+import java.util.ArrayList;
 import javax.swing.JColorChooser;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
@@ -13,8 +14,10 @@ import javax.swing.filechooser.FileNameExtensionFilter;
  *
  * @author Michele Tomyslak
  */
-public class MainFrame extends javax.swing.JFrame {
+public class MainFrame extends javax.swing.JFrame implements TrianglePanelListener {
 
+    
+    
     /**
      * Costruttore del frame
      * param
@@ -28,6 +31,7 @@ public class MainFrame extends javax.swing.JFrame {
         snowFlakePanel.tp = trianglePanel;
         
     }
+    
     
         
     
@@ -55,7 +59,7 @@ public class MainFrame extends javax.swing.JFrame {
         exportAsPNGMenu = new javax.swing.JMenuItem();
         editMenu = new javax.swing.JMenu();
         resetMenuItem = new javax.swing.JMenuItem();
-        Genera = new javax.swing.JMenu();
+        generaButton = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMaximumSize(new java.awt.Dimension(1280, 614));
@@ -172,13 +176,13 @@ public class MainFrame extends javax.swing.JFrame {
 
         jMenuBar1.add(editMenu);
 
-        Genera.setText("jMenu2");
-        Genera.addMouseListener(new java.awt.event.MouseAdapter() {
+        generaButton.setText("Genera");
+        generaButton.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                GeneraMouseClicked(evt);
+                generaButtonMouseClicked(evt);
             }
         });
-        jMenuBar1.add(Genera);
+        jMenuBar1.add(generaButton);
 
         setJMenuBar(jMenuBar1);
 
@@ -294,12 +298,12 @@ JFileChooser jfc = new JFileChooser();
 
     private void formMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_formMouseClicked
         snowFlakePanel.repaint();
-        System.out.println("Negro");
+        
     }//GEN-LAST:event_formMouseClicked
 
-    private void GeneraMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_GeneraMouseClicked
+    private void generaButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_generaButtonMouseClicked
         snowFlakePanel.repaint();
-    }//GEN-LAST:event_GeneraMouseClicked
+    }//GEN-LAST:event_generaButtonMouseClicked
 
     
     /**
@@ -337,13 +341,15 @@ JFileChooser jfc = new JFileChooser();
         });
     }
     
+    
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JMenu Genera;
     private javax.swing.JMenuItem SaveFlakeMenu;
     private javax.swing.JMenu editMenu;
     private javax.swing.JMenuItem exportAsPNGMenu;
     private javax.swing.JMenuItem exportAsSVGMenu;
+    private javax.swing.JMenu generaButton;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem newFlake;
@@ -354,5 +360,10 @@ JFileChooser jfc = new JFileChooser();
     private javax.swing.JLabel xScreen;
     private javax.swing.JLabel yScreen;
     // End of variables declaration//GEN-END:variables
+
+    @Override
+    public void triangleUpdated() {
+        snowFlakePanel.repaint();
+    }
     
 }
