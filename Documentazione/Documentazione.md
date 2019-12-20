@@ -60,21 +60,8 @@
 
 ### Abstract
 
- 
+ E' necessario creare un applicativo che permetta di generare dei fiocchi di neve a partire da un triangolo, tagliato da diversi poligoni, che specchiati creano il caratteristico fiocco.
 
-  -   **Background/Situazione iniziale**
-      
-  -   **Descrizione del problema e motivazione**: E' necessario creare un applicativo che permetta di generare dei fiocchi di neve a partire da un triangolo, tagliato da diversi poligoni, che specchiati creano il caratteristico fiocco.
-
-  -   **Approccio/Metodi**: Come ho ottenuto dei progressi? Come ho
-      risolto il problema (tecniche…)? Quale è stata l’entità del mio
-      lavoro? Che fattori importanti controllo, ignoro o misuro?
-
-  -   **Risultati**: Quale è la risposta? Quali sono i risultati? Quanto è
-      più veloce, più sicuro, più economico o in qualche altro aspetto
-      migliore di altri prodotti/soluzioni?
-
-  Esempio di abstract:
 
 
 ### Scopo
@@ -151,40 +138,32 @@ funzionalità del prodotto.
 
 ### Pianificazione
 
-Prima di stabilire una pianificazione bisogna avere almeno una vaga idea
-del modello di sviluppo che si intende adottare. In questa sezione
-bisognerà inserire il modello concettuale di sviluppo che si seguirà
-durante il progetto. Gli elementi di riferimento per una buona
-pianificazione derivano da una scomposizione top-down della problematica
-del progetto.
-
-La pianificazione può essere rappresentata mediante un diagramma di
-Gantt.
-
-Se si usano altri metodi di pianificazione (es scrum), dovranno apparire
-in questo capitolo.
+Dovrebbero esserci i Gantt , ma mi son dimenticato che a casa non ho Project e non posso esportarli per caricarli nella documentazione
 
 ### Analisi dei mezzi
 
-Elencare e *descrivere* i mezzi disponibili per la realizzazione del
-progetto. Ricordarsi di sempre descrivere nel dettaglio le versioni e il
-modello di riferimento.
+**Hardware**
+- HP Pavillion
 
-SDK, librerie, tools utilizzati per la realizzazione del progetto e
-eventuali dipendenze.
+**Software**
+- Netbeans 12.1
+- Visual Studio Code
+- Git Hub Desktop
 
-Su quale piattaforma dovrà essere eseguito il prodotto? Che hardware
-particolare è coinvolto nel progetto? Che particolarità e limitazioni
-presenta? Che hw sarà disponibile durante lo sviluppo?
+**Librerie**
+- Java AWT
+- Java Util
+- Java Swing
+- Java io
+- Java nio
+- SVGGraphics2D
+
+L'applicazione dovrebbe funzionare su tutti i sistemi operativi, grazie a Java (che ovviamente deve essere installato)
 
 ## Progettazione
 
 
 
-Questo capitolo descrive esaustivamente come deve essere realizzato il
-prodotto fin nei suoi dettagli. Una buona progettazione permette
-all’esecutore di evitare fraintendimenti e imprecisioni
-nell’implementazione del prodotto.
 
 ### Design dell’architettura del sistema
 

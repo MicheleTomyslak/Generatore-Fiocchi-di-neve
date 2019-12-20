@@ -39,7 +39,7 @@ public class SnowFlakePanel extends javax.swing.JPanel  {
      * Posizione del mouse nel JPanel
      */
     Point posMouse;
-    ArrayList<TrianglePanelListener> listeners;
+    
     /**
      * TrianglePanel instance, used to import the cut triangolo.
      */
@@ -54,7 +54,7 @@ public class SnowFlakePanel extends javax.swing.JPanel  {
     /**
      * Il colore di riempimento del fiocco di neve
      */
-    Color riempimentoColor = new Color(175, 0, 22);
+    Color riempimentoColor = new Color(0, 0, 0);
     
     /**
      * Il colore del bordo nel fiocco di neve
@@ -88,7 +88,7 @@ public class SnowFlakePanel extends javax.swing.JPanel  {
         g2d.setRenderingHint(RenderingHints.KEY_TEXT_ANTIALIASING,
                              RenderingHints.VALUE_TEXT_ANTIALIAS_ON );
         try{       
-            g.setColor(Color.yellow);
+            g.setColor(new Color(200,200,255));
             g.fillRect(0, 0, this.getWidth(), this.getHeight());
             Area triangolo = this.tp.triangolo;
             this.center = new Point(this.tp.center.x, this.tp.center.y);
@@ -297,12 +297,7 @@ public class SnowFlakePanel extends javax.swing.JPanel  {
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    public void addTrianglePanelListener(TrianglePanelListener listener){
-        this.listeners.add(listener);
-    }
-    public void removeTrianglePanelListener(TrianglePanelListener listener){
-        this.listeners.remove(listener);
-    }
+    
     
 
 

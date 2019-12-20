@@ -25,42 +25,48 @@ import javax.swing.JOptionPane;
 public class TrianglePanel extends javax.swing.JPanel{
     ArrayList<TrianglePanelListener> listeners;
     /**
-     *
+     * La posizione del mouse nel JPanel
      */
     Point mousePosition;
 
     /**
-     *
+     * Il poligono con i punti dove tagliare per creare il fiocco
      */
     Polygon poly;
 
     /**
-     *
+     * Lista dei punti
      */
     List<Point> points;
-
+    /**
+     * Lista dei poligoni da tagliare nel triangolo per creare il fiocco
+     */
     List<Polygon> polygonList;
 
     /**
-     *
+     * Rappresenta un triangolo
      */
     private Triangle t1;
 
     /**
-     *
+     * 
      */
     Point center;
 
     /**
-     *
+     * Il colore di riempimento del triangolo
      */
     Color riempimentoColor = new Color(175, 0, 175);
+    /**
+     * Il colore del bordo del triangolo
+     * (non utilizzato)
+     */
     Color strokeColor = Color.BLACK;
 
     /**
      *
      */
-    int RAD = 5;
+    int supportVar = 5;
 
     /**
      *
@@ -101,7 +107,7 @@ public class TrianglePanel extends javax.swing.JPanel{
     @Override
     public void paintComponent(Graphics g) {
         super.paintComponent(g);
-        g.setColor(Color.cyan);
+        g.setColor(new Color(200,200,255));
         g.fillRect(0, 0, this.getWidth(), this.getHeight());
         
         Graphics2D contestoGrafico2D = (Graphics2D) g;
@@ -133,27 +139,28 @@ public class TrianglePanel extends javax.swing.JPanel{
         for (Point point : this.points) {
             contestoGrafico2D.setColor(new Color(100, 100, 100, 100));
             contestoGrafico2D.fillOval(
-                    point.x - this.RAD,
-                    point.y - this.RAD,
-                    this.RAD * 2,
-                    this.RAD * 2);
+                    point.x - this.supportVar,
+                    point.y - this.supportVar,
+                    this.supportVar * 2,
+                    this.supportVar * 2);
             contestoGrafico2D.setColor(new Color(0, 0, 0, 255));
-            contestoGrafico2D.drawOval(point.x - this.RAD,
-                    point.y - this.RAD,
-                    this.RAD * 2,
-                    this.RAD * 2);
+            contestoGrafico2D.drawOval(point.x - this.supportVar,
+                    point.y - this.supportVar,
+                    this.supportVar * 2,
+                    this.supportVar * 2);
         }
     }
 
     /**
-     *
-     * @param handle
+     * Serializza l'oggetto in un file, permettendo così di reistanziarlo quando si caricano i punti
+     * @param handle Il file da gestire
      */
-    public void serialize(File handle) {
+    public void serializzaOggetto(File handle) {
         String path = handle.toString();
         try {
             FileOutputStream outputStream = new FileOutputStream(path);
             ObjectOutputStream out = new ObjectOutputStream(outputStream);
+            
             out.writeObject(this.poly);
             out.close();
             outputStream.close();
@@ -170,10 +177,10 @@ public class TrianglePanel extends javax.swing.JPanel{
     }
 
     /**
-     *
-     * @param handle
+     * Deserializza l'oggetto in modo da poter rileggere l'oggetto quando si caricano dei punti.
+     * @param handle il file da gestire
      */
-    public void deSerialize(File handle) {
+    public void deSerializzaOggetto(File handle) {
         String path = handle.toString();
         try {
             FileInputStream inputStream = new FileInputStream(path);
@@ -243,10 +250,10 @@ public class TrianglePanel extends javax.swing.JPanel{
      */
     private void formMouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_formMouseDragged
         for (Point point : points) {
-            if (evt.getPoint().distance(point) <= this.RAD) {
-                if (evt.getX() > this.RAD && evt.getY() > this.RAD) {
-                    if (evt.getX() < this.getWidth() - this.RAD
-                            && evt.getY() < this.getHeight() - this.RAD) {
+            if (evt.getPoint().distance(point) <= this.supportVar) {
+                if (evt.getX() > this.supportVar && evt.getY() > this.supportVar) {
+                    if (evt.getX() < this.getWidth() - this.supportVar
+                            && evt.getY() < this.getHeight() - this.supportVar) {
                         int index = this.points.indexOf(point);
                         this.points.add(index, evt.getPoint());
                         this.points.remove(point);
@@ -272,7 +279,7 @@ public class TrianglePanel extends javax.swing.JPanel{
             this.points.add(evt.getPoint());
         }else if(evt.getButton() == evt.BUTTON3){
             for (Point point : points) {
-                if(evt.getPoint().distance(point) <= this.RAD){
+                if(evt.getPoint().distance(point) <= this.supportVar){
                     this.points.remove(point);
                     break;
                 }
@@ -295,7 +302,7 @@ public class TrianglePanel extends javax.swing.JPanel{
             this.points.add(evt.getPoint());
         } else if (evt.getButton() == evt.BUTTON3) {
             for (Point point : points) {
-                if (evt.getPoint().distance(point) <= this.RAD) {
+                if (evt.getPoint().distance(point) <= this.supportVar) {
                     this.points.remove(point);
                     break;
                 }

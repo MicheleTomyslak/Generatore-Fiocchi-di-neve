@@ -238,11 +238,8 @@ public class MainFrame extends javax.swing.JFrame implements TrianglePanelListen
             trianglePanel.poly.reset();
             trianglePanel.points.clear();
             trianglePanel.repaint();
-            snowFlakePanel.repaint();
-            trianglePanel.riempimentoColor = new Color(22, 152, 175);
-            trianglePanel.strokeColor = Color.BLACK;
-            snowFlakePanel.riempimentoColor = new Color(22, 152, 175);
-            snowFlakePanel.borderColor = Color.BLACK;
+            snowFlakePanel.repaint();            
+            
             snowFlakePanel.tp = trianglePanel;
             
         
@@ -270,7 +267,7 @@ JFileChooser jfc = new JFileChooser();
         try {
             String handle = new String(jfc.getSelectedFile().toPath().toString());
             File handleFile = new File(handle);
-            trianglePanel.serialize(handleFile);
+            trianglePanel.serializzaOggetto(handleFile);
         } catch (NullPointerException npe) {
             System.out.println("Closed");
         }
